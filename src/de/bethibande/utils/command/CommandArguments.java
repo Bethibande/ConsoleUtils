@@ -33,14 +33,16 @@ public class CommandArguments {
                 if(!val.startsWith("-")) {
                     if(val.startsWith("\"")) {
                         i++;
-                        while(i < args.length) {
-                            i++;
+                        if(!val.endsWith("\"")) {
+                            while (i < args.length) {
+                                i++;
 
-                            String __a = args[i];
-                            val = val + " " + __a;
+                                String __a = args[i];
+                                val = val + " " + __a;
 
-                            if(__a.endsWith("\"") && ! __a.equals("\\\"")) {
-                                break;
+                                if (__a.endsWith("\"") && !__a.equals("\\\"")) {
+                                    break;
+                                }
                             }
                         }
 

@@ -31,7 +31,6 @@ public class CommandDispatcher extends Thread {
                 commandManager.dispatch(cmd);
             } catch(Exception e) {
                 e.printStackTrace();
-                continue;
             }
         }
     }
