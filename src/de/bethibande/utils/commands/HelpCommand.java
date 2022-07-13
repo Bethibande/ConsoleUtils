@@ -44,20 +44,20 @@ public class HelpCommand extends Command {
 
                 if(length == 1) {
                     l.logMessage("Help - " + cmd.getCommandName());
-                    l.logMessage(" §dDescription: §c" + cmd.getDescription());
-                    l.logMessage(" §aAliases: §c" + (cmd.getAliases() != null ? "<" + Arrays.join(cmd.getAliases(), "/") + ">": "none"));
-                    l.logMessage(" §eSub commands: §c" + (cmd.getChildren().isEmpty() ? "none": Arrays.join(cmd.getChildren().stream().map(SubCommand::getCommandName).toArray(String[]::new), ", ")));
+                    l.logMessage(" Description: §c" + cmd.getDescription());
+                    l.logMessage(" Aliases: §c" + (cmd.getAliases() != null ? "<" + Arrays.join(cmd.getAliases(), "/") + ">": "none"));
+                    l.logMessage(" Sub commands: §c" + (cmd.getChildren().isEmpty() ? "none": Arrays.join(cmd.getChildren().stream().map(SubCommand::getCommandName).toArray(String[]::new), ", ")));
 
                     if(cmd.getArgumentMap().isNotEmpty()) {
-                        l.logMessage(" §1Arguments: ");
+                        l.logMessage(" Arguments: ");
                         for(Argument a : cmd.getArgumentMap().getArguments()) {
                             String color = StringUtils.calcColor(a.getName());
 
                             l.logMessage("  -" + color + a.getName() + "§r | " + a.getDescription());
-                            if(a.isRequired()) l.logMessage("   §aRequired: §cyes");
-                            l.logMessage("   §bType: §c" + a.getType());
+                            if(a.isRequired()) l.logMessage("   Required: §ayes");
+                            l.logMessage("   Type: §c" + a.getType());
                             if(a.getAllowedValues() != null) {
-                                l.logMessage("   §2Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");
+                                l.logMessage("   Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");
                             }
                         }
                     } else l.logMessage(" Arguments: none");
@@ -75,20 +75,20 @@ public class HelpCommand extends Command {
             }
 
             l.logMessage("Help - " + sub.getCommandName());
-            l.logMessage(" §dDescription: §c" + sub.getDescription());
-            l.logMessage(" §aAliases: §c" + (sub.getAliases() != null ? "<" + Arrays.join(sub.getAliases(), "/") + ">": "none"));
-            l.logMessage(" §eSub commands: §c" + (sub.getChildren().isEmpty() ? "none": Arrays.join(sub.getChildren().stream().map(SubCommand::getCommandName).toArray(String[]::new), ", ")));
+            l.logMessage(" Description: §c" + sub.getDescription());
+            l.logMessage(" Aliases: §c" + (sub.getAliases() != null ? "<" + Arrays.join(sub.getAliases(), "/") + ">": "none"));
+            l.logMessage(" Sub commands: §c" + (sub.getChildren().isEmpty() ? "none": Arrays.join(sub.getChildren().stream().map(SubCommand::getCommandName).toArray(String[]::new), ", ")));
 
             if(sub.getArgumentMap().isNotEmpty()) {
-                l.logMessage(" §1Arguments: ");
+                l.logMessage(" Arguments: ");
                 for(Argument a : sub.getArgumentMap().getArguments()) {
                     String color = StringUtils.calcColor(a.getName());
 
                     l.logMessage("  -" + color + a.getName() + "§r | " + a.getDescription());
-                    if(a.isRequired()) l.logMessage("   §aRequired: §cyes");
-                    l.logMessage("   §bType: §c" + a.getType());
+                    if(a.isRequired()) l.logMessage("   Required: §ayes");
+                    l.logMessage("   Type: §c" + a.getType());
                     if(a.getAllowedValues() != null) {
-                        l.logMessage("   §2Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");
+                        l.logMessage("   Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");
                     }
                 }
             } else l.logMessage(" Arguments: none");
