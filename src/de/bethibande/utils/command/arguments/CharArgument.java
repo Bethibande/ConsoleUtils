@@ -16,7 +16,7 @@ public class CharArgument extends Argument<Character> {
 
     @Override
     public Character getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getCharacter(super.getName());
     }
 

@@ -34,6 +34,7 @@ public class StringArgument extends Argument<String> {
 
     @Override
     public String getValue(CommandArguments arguments) {
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getArgument(super.getName());
     }
 

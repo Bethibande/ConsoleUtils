@@ -55,6 +55,7 @@ public class HelpCommand extends Command {
 
                             l.logMessage("  -" + color + a.getName() + "§r | " + a.getDescription());
                             if(a.isRequired()) l.logMessage("   Required: §ayes");
+                            if(a.getDefaultValue() != null) l.logMessage("   Default Value: §c" + a.getDefaultValue());
                             l.logMessage("   Type: §c" + a.getType());
                             if(a.getAllowedValues() != null) {
                                 l.logMessage("   Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");
@@ -86,6 +87,7 @@ public class HelpCommand extends Command {
 
                     l.logMessage("  -" + color + a.getName() + "§r | " + a.getDescription());
                     if(a.isRequired()) l.logMessage("   Required: §ayes");
+                    if(a.getDefaultValue() != null) l.logMessage("   Default Value: §c" + a.getDefaultValue());
                     l.logMessage("   Type: §c" + a.getType());
                     if(a.getAllowedValues() != null) {
                         l.logMessage("   Values: §c<" + Arrays.join(a.getAllowedValues(), ", ") + ">");

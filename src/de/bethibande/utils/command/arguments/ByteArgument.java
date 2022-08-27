@@ -16,7 +16,7 @@ public class ByteArgument extends Argument<Byte> {
 
     @Override
     public Byte getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getByte(super.getName());
     }
 

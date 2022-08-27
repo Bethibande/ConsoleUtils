@@ -16,7 +16,7 @@ public class IntArgument extends Argument<Integer> {
 
     @Override
     public Integer getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getInt(super.getName());
     }
 

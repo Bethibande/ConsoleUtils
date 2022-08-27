@@ -7,6 +7,8 @@ public abstract class Argument<T> {
     private final String name;
     private String description = "no description available";
 
+    private T defaultValue = null;
+
     private final ArgumentType type;
     private final boolean required;
 
@@ -44,6 +46,10 @@ public abstract class Argument<T> {
 
     public final boolean isRequired() {
         return required;
+    }
+
+    public T getDefaultValue() {
+        return defaultValue;
     }
 
     public Argument<T> setAllowedValues(String... allowed) {

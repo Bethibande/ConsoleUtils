@@ -16,7 +16,7 @@ public class FloatArgument extends Argument<Float> {
 
     @Override
     public Float getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getFloat(super.getName());
     }
 

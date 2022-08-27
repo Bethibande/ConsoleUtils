@@ -16,7 +16,7 @@ public class ShortArgument extends Argument<Short> {
 
     @Override
     public Short getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getShort(super.getName());
     }
 

@@ -76,4 +76,21 @@ public class ConsoleColors {
     public static String PURPLE_BACKGROUND_BRIGHT = "\u001b[0;105m"; // PURPLE
     public static String CYAN_BACKGROUND_BRIGHT = "\u001b[0;106m"; // CYAN
     public static String WHITE_BACKGROUND_BRIGHT = "\u001b[0;107m" ;// WHITE
+
+    public static String colorOf(int color) {
+        return "\u001b[" + color + "m";
+    }
+
+    public static String brightColorOf(int color) {
+        return "\u001b[0;" + color + "m";
+    }
+
+    public static String boldColorOf(int color) {
+        return "\u001b[1;" + color + "m";
+    }
+
+    public static String underlineOf(int color) {
+        return "\u001b[4;" + color + "m";
+    }
+
 }

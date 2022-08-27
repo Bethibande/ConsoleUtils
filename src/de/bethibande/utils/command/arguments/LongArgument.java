@@ -16,7 +16,7 @@ public class LongArgument extends Argument<Long> {
 
     @Override
     public Long getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getLong(super.getName());
     }
 

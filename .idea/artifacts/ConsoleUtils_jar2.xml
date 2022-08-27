@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ConsoleUtils:jar2">
+    <output-path>$USER_HOME$/Desktop/Coding/apis</output-path>
+    <root id="archive" name="ConsoleUtils.jar">
+      <element id="module-output" name="ConsoleUtils" />
+    </root>
+  </artifact>
+</component>

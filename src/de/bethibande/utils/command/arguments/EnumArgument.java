@@ -24,7 +24,7 @@ public class EnumArgument<T extends Enum<T>> extends Argument<T> {
 
     @Override
     public T getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
 
         String val = arguments.getArgument(super.getName());
         for(T e : clazz.getEnumConstants()) {

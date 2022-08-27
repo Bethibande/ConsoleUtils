@@ -16,7 +16,7 @@ public class DoubleArgument extends Argument<Double> {
 
     @Override
     public Double getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return null;
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
         return arguments.getDouble(super.getName());
     }
 
