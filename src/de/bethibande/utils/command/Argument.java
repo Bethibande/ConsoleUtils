@@ -52,6 +52,11 @@ public abstract class Argument<T> {
         return defaultValue;
     }
 
+    public Argument<T> setDefaultValue(T defaultValue) {
+        this.defaultValue = defaultValue;
+        return this;
+    }
+
     public Argument<T> setAllowedValues(String... allowed) {
         this.allowed = () -> allowed;
         return this;

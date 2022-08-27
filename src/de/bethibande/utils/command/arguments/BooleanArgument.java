@@ -22,7 +22,7 @@ public class BooleanArgument extends Argument<Boolean> {
 
     @Override
     public Boolean getValue(CommandArguments arguments) {
-        if(!arguments.hasArgument(super.getName())) return getDefaultValue();
+        if(!arguments.hasArgument(super.getName())) return getDefaultValue() != null && getDefaultValue();
         return arguments.getBoolean(super.getName());
     }
 
